@@ -1,0 +1,36 @@
+{
+  "name": "barray",
+  "version": "0.1.0",
+  "description": "An array with constant time push, pop, unshift, shift, and index lookups",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "jest --watch",
+    "clean": "rm -rf dist && mkdir dist",
+    "build": "npm run clean && npm run build:types && npm run build:js",
+    "build:types": "tsc --emitDeclarationOnly",
+    "build:js": "babel src --out-dir dist --extensions \".ts,.txt\" --source-maps inline",
+    "prepare": "npm run build",
+    "ts": "tsc --noEmit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "httpe://github.com/baron816/fromable.git"
+  },
+  "author": "Baron Willeford",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.10.5",
+    "@babel/core": "^7.11.0",
+    "@babel/plugin-proposal-class-properties": "^7.10.4",
+    "@babel/plugin-syntax-class-properties": "^7.10.4",
+    "@babel/preset-env": "^7.11.0",
+    "@babel/preset-typescript": "^7.10.4",
+    "@types/jest": "^26.0.8",
+    "babel-jest": "^26.2.2",
+    "jest": "^26.2.2",
+    "regenerator-runtime": "^0.13.7",
+    "ts-jest": "^26.1.4",
+    "typescript": "^3.9.7"
+  }
+}
